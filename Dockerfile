@@ -32,6 +32,7 @@ WORKDIR /tmp/build/bitcoind
 ARG gitrepo=https://github.com/bitcoin/bitcoin.git
 RUN git clone $gitrepo /tmp/build/bitcoind
 ARG revision=master
+RUN git fetch origin
 RUN git checkout --detach $revision
 RUN ./autogen.sh
 RUN ./configure LDFLAGS=-L/opt/berkeleydb/lib/ CPPFLAGS=-I/opt/berkeleydb/include/ \
