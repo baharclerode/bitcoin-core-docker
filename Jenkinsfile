@@ -5,6 +5,6 @@ node("docker") {
     }
 
     stage("Build Docker Image") {
-            docker.build("docker.dragon.zone:10081/bitcoin-core:0.15.0.1.${env.BUILD_NUMBER}", "--build-arg revision=v0.15.0.1 .")
+            docker.build("docker.dragon.zone:10081/bitcoin-core:0.17.1.${env.BUILD_NUMBER}", "--build-arg revision=v0.17.1 .")
     }
 }
